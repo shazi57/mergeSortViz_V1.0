@@ -1,0 +1,35 @@
+{
+  "name": "mergesortviz_v1.0",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "d3js visualization of merge-sort algorithm",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/shazi57/mergeSortViz_V1.0.git"
+  },
+  "keywords": [
+    "merge-sort",
+    "algorithm",
+    "data-visualization"
+  ],
+  "author": "Taewoo Ryu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shazi57/mergeSortViz_V1.0/issues"
+  },
+  "homepage": "https://github.com/shazi57/mergeSortViz_V1.0#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "d3": "^5.16.0",
+    "jquery": "^3.5.1",
+    "mocha": "^8.0.1"
+  }
+}

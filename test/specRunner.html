@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>D3 Tests</title>
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+  </head>
+  <body>
+    <div id = "mocha"></div>
+    <script src="../node_modules/d3/dist/d3.js"></script>
+    <script src="https://d3js.org/d3-random.v2.min.js"></script>
+    <script src="../node_modules/d3/dist/d3.min.js"></script>
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script>
+      mocha.setup({
+        'ui': 'bdd',
+        'bail': true
+      });
+    </script>
+    <script>window.expect = chai.expect</script>
+
+    <script>
+      $(function() {
+        window.mochaPhantomJS? mochaPhantomJS.run() : mocha.run();
+      })
+    </script>
+  </body>
+</html>
