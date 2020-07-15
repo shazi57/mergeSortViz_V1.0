@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "xdg-open test/specRunner.html",
     "start": "npx live-server"
   },
   "repository": {
@@ -31,5 +31,8 @@
     "d3": "^5.16.0",
     "jquery": "^3.5.1",
     "mocha": "^8.0.1"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.14.0"
   }
 }

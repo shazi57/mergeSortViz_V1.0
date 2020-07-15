@@ -4,10 +4,8 @@
     <link rel='stylesheet' type='css' href='styles.css'>
   </head>
   <body>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <div class="scoreboard">
-      <div class="highscore">High score: <span>0</span></div>
-      <div class="current">Current score: <span>0</span></div>
-      <div class="collisions">Collisions: <span>0</span></div>
       <button id = "start"> start </button>
       <button id = "end"> end </button>
 
@@ -15,6 +13,13 @@
     <div class="board"><div class="mouse"></div></div>
     <script src="https://d3js.org/d3-random.v2.min.js"></script>
     <script src="./node_modules/d3/dist/d3.js"></script>
-    <script src='./src/app.js'></script>
+    <script src='./src/data-viz.js'></script>
+    <script src="./src/sortingAlgorithms.js"></script>
+    <script src="./src/svgView.js"></script>
+    <script src="./src/helperFunctions.js"></script>
+    <script src="./src/buttonView.js"></script>
+    <script>
+      $(() => dataViz.initiate());
+    </script>
   </body>
 </html>

@@ -19,13 +19,16 @@
         'ui': 'bdd',
         'bail': true
       });
-    </script>
+      </script>
     <script>window.expect = chai.expect</script>
 
     <script>
       $(function() {
         window.mochaPhantomJS? mochaPhantomJS.run() : mocha.run();
       })
-    </script>
+      </script>
+    <script src="/src/sortingAlgorithms.js"></script>
+    <script src="/src/data-viz.js"></script>
+    <script src="/test/data-viz-spec.js"></script>
   </body>
 </html>
