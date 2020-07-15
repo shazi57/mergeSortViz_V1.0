@@ -1,30 +1,26 @@
 var svgView = {
-  svg : null,
-
   initiate : function() {
-    svgView.svg = d3.select('body')
+    SVG.figure = d3.select('body')
       .append('svg')
-      .attr('width', 1000)
-      .attr('height', 800);
+      .attr('width', SVG.svgConfig.canvasWidth)
+      .attr('height', SVG.svgConfig.canvasHeight);
   },
-  render : function() {
-    var arrayRandom = helperFunctions.createRandomArray(10);
 
-    svgView.svg.selectAll('rect')
-      .data(arrayRandom)
+  render : function() {
+    SVG.data = helperFunctions.createRandomArray(SVG.svgConfig.numElements);
+    SVG.figure.selectAll('rect')
+      .data(SVG.data)
       .enter()
       .append('rect')
-      .attr('x', (d, i) => 100 + i * 55)
+      .attr('x', (d, i) => 100 + i * SVG.svgConfig.barInterval)
       .attr('y', (d, i) => 800 - 10 * d)
-      .attr('width', 50)
+      .attr('width', SVG.svgConfig.barWidth)
       .attr('height', d => (d * 10))
       .style('fill', 'green');
-
-    svgView.svg.node();
   },
 
   clear : function() {
-    svgView.svg
+    SVG.figure
       .selectAll('rect')
       .data([])
       .exit()

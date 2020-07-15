@@ -1,0 +1,5 @@
+var SelectBar = {
+  initiate : function() {
+
+  }
+}

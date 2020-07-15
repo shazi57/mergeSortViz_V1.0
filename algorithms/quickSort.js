@@ -1,16 +1,10 @@
 var quicksort = function(array) {
   var Qsort = function(array, low, high) {
-    let index;
-    if (array.length > 1) {
-      index = partition(array, low, high);
-      if (low < index - 1) {
-        Qsort(array, low, index - 1);
-      }
-      if (index < high) {
-        Qsort(array, index, high);
-      }
+    if (low < high) {
+      var q = partition(array,low, high);
+      Qsort(array, low, q);
+      Qsort(array, q + 1, high);
     }
-    return array;
   }
   Qsort(array, 0, array.length-1);
 };
@@ -20,21 +14,23 @@ var partition = function(array, low, high) {
       i = low,
       j = high;
 
-  while (i <= j) {
-    while (array[i] < pivot) {
+  while (true) {
+    do {
       i++;
     }
-    while (array[j] > pivot) {
-      j--;
-    }
+    while (array[i] < pivot);
 
-    if (i <= j) {
-      swapRef(array, i, j);
-      i++;
+    do {
       j--;
     }
+    while (array[j] > pivot);
+
+    if (i >= j) {
+      return j;
+    }
+    swapRef(array,i,j);
+    algorithms.QuickSortData.push([i,j]);
   }
-  return i;
 }
 
 var swapRef = function(array, index1, index2) {
