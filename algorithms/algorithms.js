@@ -8,36 +8,47 @@ var algorithms = {
     }
     var copiedArr = SVG.data.slice();
     algorithms.QuickSort(copiedArr);
-    algorithms.render(algorithms.QuickSortData);
-    console.log(copiedArr);
+    console.log(algorithms.QuickSortData);
+    var copiedData = algorithms.QuickSortData.slice();
+    algorithms.render(copiedData);
+    //console.log(copiedArr);
   },
 
-  render : function(qsData) {
-  var coord = qsData.shift();  
+  render : function(data) {
+
     var moveBar = function(coord, from = 0, dest = 1) {
       //console.log(coord);
+       SVG.figure.select(`#num_${coord[2]}`).style('fill', 'blue');
+       
        SVG.figure
-        .select(`#num${coord[from]}`)
+        .select(`#num_${coord[from]}`)
         .transition()
         .duration(1000)
         .attr('x', (d, i) => 100 + (i + coord[dest]) * SVG.svgConfig.barInterval)
-        .attr('id', `num${coord[dest]}-changed`)
+        .attr('id', `num_${coord[dest]}-changed`)
         .style('fill', 'red')
         .on('end', function() {
-          if (algorithms.QuickSortData.length === 0) {
+          if (data.length === 0) {
+            moveBar(coord);
             console.log('bye');
             return;
           } else if (from === 1 && dest === 0) {
-            SVG.figure.select(`#num${coord[from]}-changed`).attr('id', `num${coord[from]}`);
-            SVG.figure.select(`#num${coord[dest]}-changed`).attr('id', `num${coord[dest]}`);
-
-            algorithms.render(algorithms.QuickSortData.shift());
+            console.log(data);
+            console.log(coord);
+            SVG.figure.select(`#num_${coord[from]}-changed`).attr('id', `num_${coord[from]}`);
+            SVG.figure.select(`#num_${coord[dest]}-changed`).attr('id', `num_${coord[dest]}`);
+            coord = data.shift();
+            moveBar(coord);
+          } else if (coord[from] === coord[dest]) {
+            SVG.figure.select(`#num_${coord[dest]}-changed`).attr('id', `num_${coord[dest]}`);
+            moveBar(coord, 1, 0);
           } else  {
+            console.log('hello~')
             moveBar(coord, 1, 0);
           }
         })
     }
 
-    moveBar(coord)
+    moveBar(data.shift())
   }
 }

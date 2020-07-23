@@ -46,7 +46,7 @@ function partition(arr, left, right) {
     // If the left pointer is less than or equal to the 
     // right pointer, then swap values
     if(i <= j) {
-      algorithms.QuickSortData.push([i, j]);
+      algorithms.QuickSortData.push([i, j, middle]);
       swapRef(arr, i , j)  // ES6 destructuring swap
       i++
       j--
