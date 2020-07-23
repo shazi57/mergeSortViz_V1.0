@@ -2,27 +2,19 @@ var svgUpdateView = {
 
   render : function() {
     let copiedArray = SVG.data.slice();
-    console.log(copiedArray);
-    algorithms.initiate(copiedArray);
-    console.log(algorithms.QuickSortArray);
-    svgUpdateView.changeAll(copiedArray);
+    //algorithms.initiate(copiedArray);
+    svgUpdateView.changeAll(copiedArray.sort((a,b) => (a-b)));
   },
 
-  switchPosition : function(array, target1, target2) {
-    SVG.figure.selectAll('rect')
-      .data(SVG.data)
+  changeAll : function(array) {
+    SVG.figure
+      .selectAll('rect')
+      .data(array)
       .transition()
-      .filter(function(d, i) { return i === target1; })
-      .duration(300)
-      .attr('x', (d, i) => 100 + (i + target2) * SVG.svgConfig.barInterval)
-      .style('fill', 'blue');
-
-    SVG.figure.selectAll('rect')
-      .data(SVG.data)
-      .transition()
-      .filter(function(d, i) { return i === target2; })
-      .duration(300)
-      .attr('x', (d, i) => 100 + (i + target1) * SVG.svgConfig.barInterval)
+      .attr('x', (d, i) => 100 + i * SVG.svgConfig.barInterval)
+      .attr('y', (d, i) => 800 - 10 * d)
+      .attr('width', SVG.svgConfig.barWidth)
+      .attr('height', d => (d * 10))
       .style('fill', 'red');
-  }
+  }  
 }

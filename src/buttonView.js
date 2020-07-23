@@ -5,10 +5,14 @@ var ButtonView = {
 
   $update : $('#update'),
 
+  $quickSort : $('#quickSort'),
+
   initiate : function(){
     ButtonView.$start.on('click', ButtonView.startEventHandler);
     ButtonView.$end.on('click', ButtonView.endEventHandler);
-    ButtonView.$update.on('click', ButtonView.updateEventHandler);
+    ButtonView.$update.on('click', ButtonView.updateAllEventHandler);
+    ButtonView.$quickSort.on('click', ButtonView.updateEventHandler);
+
   },
 
   startEventHandler : function(event) {
@@ -19,7 +23,11 @@ var ButtonView = {
     svgView.clear();
   },
 
-  updateEventHandler : function(event) {
+  updateAllEventHandler : function(event) {
     svgUpdateView.render();
+  },
+
+  updateEventHandler : function(event) {
+    algorithms.initiate();
   }
 };
