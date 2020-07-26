@@ -47,17 +47,11 @@ function partition(arr, left, right) {
     // right pointer, then swap values
     if(i <= j) {
       algorithms.QuickSortData.push([i, j, middle]);
-      swapRef(arr, i , j)  // ES6 destructuring swap
+      helperFunctions.swapRef(arr, i , j)  // ES6 destructuring swap
       i++
       j--
     }
   }
 
   return i
-}
-
-var swapRef = function(array, index1, index2) {
-  let temp = array[index1];
-  array[index1] = array[index2];
-  array[index2] = temp;
 }
