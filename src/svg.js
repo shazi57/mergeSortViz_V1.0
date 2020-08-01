@@ -4,9 +4,9 @@ var SVG = {
   data : [],
 
   svgConfig : {
-    numElements : 20,
-    barWidth : 40,
-    barInterval : 45,
+    numElements : 200,
+    barWidth : 5,
+    barInterval : 6,
     canvasWidth : 1800,
     canvasHeight : 800
   }

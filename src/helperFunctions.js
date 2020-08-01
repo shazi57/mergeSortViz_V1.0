@@ -8,5 +8,11 @@ var helperFunctions = {
 
     console.log(`this array has length ${length}`);
     return data;
+  },
+
+  swapRef : function(array, index1, index2) {
+    let temp = array[index1];
+    array[index1] = array[index2];
+    array[index2] = temp;
   }
 }

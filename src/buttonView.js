@@ -7,11 +7,18 @@ var ButtonView = {
 
   $quickSort : $('#quickSort'),
 
+  $bubbleSort : $('#bubbleSort'),
+
+  $selectionSort : $('#selectionSort'),
+
   initiate : function(){
     ButtonView.$start.on('click', ButtonView.startEventHandler);
     ButtonView.$end.on('click', ButtonView.endEventHandler);
     ButtonView.$update.on('click', ButtonView.updateAllEventHandler);
-    ButtonView.$quickSort.on('click', ButtonView.updateEventHandler);
+    ButtonView.$quickSort.on('click', ButtonView.updateQuickSortEventHandler);
+    ButtonView.$bubbleSort.on('click', ButtonView.updateBubbleSortEventHandler);
+    ButtonView.$selectionSort.on('click', ButtonView.updateSelectionSortEventHandler);
+
 
   },
 
@@ -27,7 +34,15 @@ var ButtonView = {
     svgUpdateView.render();
   },
 
-  updateEventHandler : function(event) {
-    algorithms.initiate();
+  updateQuickSortEventHandler : function(event) {
+    algorithms.initiateQuickSort();
+  },
+
+  updateBubbleSortEventHandler : function(event) {
+    algorithms.initiateBubbleSort();
+  },
+
+  updateSelectionSortEventHandler : function(event) {
+    algorithms.initiateSelectionSort();
   }
 };

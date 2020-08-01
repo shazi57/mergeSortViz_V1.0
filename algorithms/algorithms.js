@@ -45,7 +45,7 @@ var algorithms = {
         .select(`#num_${coord[from]}`)
         .style('fill', this.fill = (this.fill !== 'blue' ? 'blue' : 'green')) 
         .transition()
-        .duration(30)
+        .duration(20)
         .attr('x', (d, i) => 100 + (i + coord[dest]) * SVG.svgConfig.barInterval)
         .attr('id', `num_${coord[dest]}-changed`)
         .on('end', function() {
@@ -81,7 +81,7 @@ var algorithms = {
         .select(`#num_${coord[from]}`)
         .style('fill', this.fill = (this.fill !== 'blue' ? 'blue' : 'green')) 
         .transition()
-        .duration(1)
+        .duration(20)
         .attr('x', (d, i) => 100 + (i + coord[dest]) * SVG.svgConfig.barInterval)
         .attr('id', `num_${coord[dest]}-changed`)
         .on('end', function() {
@@ -120,7 +120,7 @@ var algorithms = {
        SVG.figure
         .select(`#num_${coord[from]}`)
         .transition()
-        .duration(1)
+        .duration(20)
         .attr('x', (d, i) => 100 + (i + coord[dest]) * SVG.svgConfig.barInterval)
         .attr('id', `num_${coord[dest]}-changed`)
         .style('fill', 'red')
