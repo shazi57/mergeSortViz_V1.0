@@ -28,7 +28,7 @@
   "homepage": "https://github.com/shazi57/mergeSortViz_V1.0#readme",
   "dependencies": {
     "chai": "^4.2.0",
-    "d3": "^5.16.0",
+    "d3": "^7.6.1",
     "jquery": "^3.5.1",
     "mocha": "^8.0.1"
   },
